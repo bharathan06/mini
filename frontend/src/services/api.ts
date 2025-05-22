@@ -1,7 +1,7 @@
 // src/services/api.ts
 
 // Adjust the BASE_URL if your Django server runs on a different host or uses /api prefix.
-const API_BASE_URL = 'http://127.0.0.1:8000/api';
+const API_BASE_URL = 'https://mini-backend-8rb7.onrender.com/api';
 
 // Define types for the responses and request payloads
 
