@@ -1,0 +1,42 @@
+# main/local.py
+
+import os
+from pathlib import Path
+from .settings import INSTALLED_APPS, MIDDLEWARE, ROOT_URLCONF, TEMPLATES, WSGI_APPLICATION, SECRET_KEY, GEMINI_API_KEY, AUTH_PASSWORD_VALIDATORS, CORS_ALLOWED_ORIGINS, CSRF_TRUSTED_ORIGINS, LANGUAGE_CODE, TIME_ZONE, USE_I18N, USE_TZ, STATIC_URL, STATIC_ROOT, DEFAULT_AUTO_FIELD
+
+# Base directory for sqlite file
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# SECURITY
+DEBUG = True
+# In dev, you usually don’t care about host checking
+ALLOWED_HOSTS = ["*"]
+
+# Use SQLite locally
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+
+# You can pull in the rest of your settings from settings.py:
+INSTALLED_APPS = INSTALLED_APPS
+MIDDLEWARE = MIDDLEWARE
+ROOT_URLCONF = ROOT_URLCONF
+TEMPLATES = TEMPLATES
+WSGI_APPLICATION = WSGI_APPLICATION
+SECRET_KEY = SECRET_KEY
+GEMINI_API_KEY = GEMINI_API_KEY
+AUTH_PASSWORD_VALIDATORS = AUTH_PASSWORD_VALIDATORS
+CORS_ALLOWED_ORIGINS = CORS_ALLOWED_ORIGINS
+CSRF_TRUSTED_ORIGINS = CSRF_TRUSTED_ORIGINS
+LANGUAGE_CODE = LANGUAGE_CODE
+TIME_ZONE = TIME_ZONE
+USE_I18N = USE_I18N
+USE_TZ = USE_TZ
+STATIC_URL = STATIC_URL
+STATIC_ROOT = STATIC_ROOT
+DEFAULT_AUTO_FIELD = DEFAULT_AUTO_FIELD
+
+# (Optional) In dev, you might want console email backend, more verbose logging, etc.

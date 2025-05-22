@@ -146,3 +146,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# main/settings.py
+import os
+
+# If DJANGO_SETTINGS_MODULE ends with "local", use the local overrides
+if os.environ.get("DJANGO_SETTINGS_MODULE", "").endswith("main.local"):
+    # these will override the production values above
+    from .local import *
+
