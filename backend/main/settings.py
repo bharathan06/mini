@@ -111,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-  "https://mini-3r9a.onrender.com",
+  "https://mini-backend-8rb7.onrender.com",
   "http://localhost:3000",
 ]
 
