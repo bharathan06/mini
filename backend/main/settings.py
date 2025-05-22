@@ -28,8 +28,11 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["mini-3r9a.onrender.com", "localhost", "127.0.0.1"]
-
+ALLOWED_HOSTS = [
+    "mini-backend-8rb7.onrender.com",  
+    "localhost",
+    "127.0.0.1"
+]
 
 
 # Application definition
@@ -84,10 +87,10 @@ WSGI_APPLICATION = 'main.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'chatbot',  
-        'USER': 'postgres',   
-        'PASSWORD': 'Vinay@2004', 
-        'HOST': 'localhost',
+        'NAME': os.getenv("DB_NAME"),
+        'USER': os.getenv("DB_USER"),
+        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'HOST': os.getenv("DB_HOST"),
         'PORT': '5432',
     }
 }
@@ -111,8 +114,13 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-  "https://mini-backend-8rb7.onrender.com",
-  "http://localhost:3000",
+    "https://mini-3r9a.onrender.com",  
+    "http://localhost:3000",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://mini-3r9a.onrender.com",
+    "https://mini-backend-8rb7.onrender.com",
 ]
 
 
@@ -131,7 +139,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
