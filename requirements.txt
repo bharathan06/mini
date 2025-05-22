@@ -22,6 +22,8 @@ django-ninja-extra==0.22.3
 django-ninja-jwt==5.3.5
 djangorestframework==3.15.2
 djangorestframework_simplejwt==5.4.0
+dnspython==2.7.0
+email_validator==2.2.0
 frozenlist==1.5.0
 google-ai-generativelanguage==0.6.15
 google-api-core==2.25.0rc1
